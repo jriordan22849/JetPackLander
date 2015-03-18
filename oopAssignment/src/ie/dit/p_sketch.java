@@ -92,7 +92,7 @@ class Start_Screen
   }
   
   public void update() {
-    speed ++;
+    speed += 2;
     if(posY + speed > 350) {
       speed = 0;
       boxes = false;
