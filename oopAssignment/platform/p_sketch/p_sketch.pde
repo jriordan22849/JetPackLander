@@ -1,5 +1,6 @@
 ArrayList<Platform> plat = new ArrayList<Platform>();
 
+boolean controls = true;
 boolean start_screen = false;
 boolean playing_screen = true;
 boolean boxes = true;
@@ -43,7 +44,7 @@ void draw() {
 void createPlatform() {
  int num_platform = 1; 
  for(int i = 0; i < num_platform; i ++) { 
-   int PlatformWidth = 30;
+   int PlatformWidth = (int)random(30, 120);
    int PlatformX = (int)random(200, width - PlatformWidth);
    int PlatformY = height -100;
    plat.add(new Platform(PlatformX, PlatformY, PlatformWidth));

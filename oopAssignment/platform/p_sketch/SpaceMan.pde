@@ -49,66 +49,63 @@ class SpaceMan
         }
   void keyPressed()
   {
-    
-    if(keyPressed == false)
+    if(controls == true) 
     {
-      if(pos.y <410)
+      if(keyPressed == false)
       {
-        boost = 0;
-        if(pos.y != 410)
+        if(pos.y <410)
         {
-          pos.y=pos.y +2;
-          pos.x=pos.x +2;
-        }
-      }
-    }
-    if(keyPressed == true)
-    {
-      if ( (keyCode == RIGHT) )
-      {
-        if( pos.x +speed > width)
-        {
-          pos.x = pos.x;
-          speed = speed;
-          println(speed);
-        }
-        else
-        {
-          println(pos.x);
-          println(pos.y);
-          pos.x += speed;
-        }
-        
-
-      }
-      
-      if ( (keyCode == LEFT) )
-      {
-        if( pos.x - speed < 0)
-        {
-          pos.x = pos.x;
-          speed = speed;
-        }
-        else
-        {
-          pos.x -= speed;
-        }
-      } 
-      if ( (keyCode==UP) )
-      {
-          if (pos.y +boost < 30)
-          {
-            pos.y = pos.y;
-            boost = boost;
-          }
-          else 
-          {
-            boost=boost+5;
-          }
-          pos.y -= boost;
           boost = 0;
+          if(pos.y != 410)
+          {
+            pos.y=pos.y +2;
+            pos.x=pos.x +2;
+          }
+        }
+      }
+      if(keyPressed == true)
+      {
+        if ( (keyCode == RIGHT) )
+        {
+          if( pos.x +speed +60> width)
+          {
+            pos.x = pos.x;
+            speed = speed;
+          }
+          else
+          {
+            pos.x += speed;
+          }
+        }
+      
+        if ( (keyCode == LEFT) )
+        {
+          if( pos.x - speed < 0)
+          {
+            pos.x = pos.x;
+            speed = speed;
+          }
+          else
+          {
+            pos.x -= speed;
+          }
+        } 
+        if ( (keyCode==UP) )
+        {
+            if (pos.y +boost < 30)
+            {
+              pos.y = pos.y;
+              boost = boost;
+            }
+            else 
+            {
+              boost=boost+5;
+            }
+            pos.y -= boost;
+            boost = 0;
+        } 
       } 
-      } 
-    }
+    } 
   }
+}
 
