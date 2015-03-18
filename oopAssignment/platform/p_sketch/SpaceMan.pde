@@ -99,7 +99,7 @@ class SpaceMan
             }
             else 
             {
-              boost=boost+5;
+              boost=boost+4;
             }
             pos.y -= boost;
             boost = 0;
