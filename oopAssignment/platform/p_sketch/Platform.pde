@@ -27,7 +27,11 @@ class Platform extends SpaceMan {
   
   void PlayerHitDetection() {
       for(int i = 0; i < plat.size(); i ++) {
-         if(dist(PlatformX, PlatformY, pos.x + boost, pos.y) < 200)
+        println("x",PlatformX);
+        println("playerX", spaceMan.pos.x);
+        println("y",PlatformY);
+         println("playerY", pos.y);
+         if(dist(PlatformX, PlatformY-90, spaceMan.pos.x , spaceMan.pos.y ) < 20)
          {
            background(140);
          } 

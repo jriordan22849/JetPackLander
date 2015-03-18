@@ -66,14 +66,16 @@ class SpaceMan
     {
       if ( (keyCode == RIGHT) )
       {
-        if( pos.x +speed +60> width)
+        if( pos.x +speed > width)
         {
           pos.x = pos.x;
           speed = speed;
+          println(speed);
         }
         else
         {
-          
+          println(pos.x);
+          println(pos.y);
           pos.x += speed;
         }
         
