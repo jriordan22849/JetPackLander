@@ -27,9 +27,12 @@ class Platform extends SpaceMan {
   
   void PlayerHitDetection() {
       for(int i = 0; i < plat.size(); i ++) {
-         if(dist(PlatformX, PlatformY, pos.x + boost, pos.y) < 200)
+         if(dist(PlatformX, PlatformY - 100, spaceMan.pos.x, spaceMan.pos.y + 20) <= 40)
          {
-           background(140);
+           if(onPlatform == true) {
+             PScore += 1;
+             onPlatform = false;
+           }            
          } 
       }
   }

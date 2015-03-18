@@ -4,6 +4,9 @@ boolean start_screen = false;
 boolean playing_screen = true;
 boolean boxes = true;
 boolean bPlatform = true;
+boolean onPlatform = true;
+
+int PScore = 0;
 
 void setup() {
   size(400, 600);
@@ -32,6 +35,8 @@ void draw() {
        }
        plat.get(i).PlayerHitDetection();
     }
+    
+    pscore.display();
   }
 }
 
