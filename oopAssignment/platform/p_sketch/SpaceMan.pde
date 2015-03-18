@@ -7,7 +7,7 @@ class SpaceMan
   
   SpaceMan()
   {
-    pos = new PVector(100, 410);
+    pos = new PVector(0, 410);
     speed = 4;
     
   }  
