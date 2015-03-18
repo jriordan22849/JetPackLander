@@ -1,7 +1,7 @@
 ArrayList<Platform> plat = new ArrayList<Platform>();
 
-boolean start_screen = true;
-boolean playing_screen = false;
+boolean start_screen = false;
+boolean playing_screen = true;
 boolean boxes = true;
 
 void setup() {
@@ -21,7 +21,10 @@ void draw() {
   if(playing_screen == true)
   {
     for(int i = 0; i < plat.size(); i ++) {
-       plat.get(i).display(); 
+       background(200);
+      plat.get(i).display(); 
+       spaceMan.update();
+       spaceMan.display();
     }
   }
 }
@@ -29,8 +32,8 @@ void draw() {
 void createPlatform() {
  int num_platform = 1; 
  for(int i = 0; i < num_platform; i ++) { 
-   int PlatformX = (int)random(200, 600);
-   int PlatformY = height - 150;
+   int PlatformX = (int)random(200, 400);
+   int PlatformY = height -100;
    int PlatformWidth = (int)random(30,121);
    plat.add(new Platform(PlatformX, PlatformY, PlatformWidth));
  }
