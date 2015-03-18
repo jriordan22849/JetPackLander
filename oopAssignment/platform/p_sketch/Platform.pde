@@ -31,9 +31,12 @@ class Platform extends SpaceMan {
          {
            if(onPlatform == true) {
              PScore += 1;
-             onPlatform = false;
-             controls = false;
-           }            
+             onPlatform = false;  
+           }  
+           if(spaceMan.pos.x + 30 <= PlatformX + (3 * PlatformWidth / 5)) {
+             spaceMan.pos.x ++; 
+           }        
+           
          } 
       }
   }

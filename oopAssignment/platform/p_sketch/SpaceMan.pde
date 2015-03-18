@@ -49,8 +49,7 @@ class SpaceMan
         }
   void keyPressed()
   {
-    if(controls == true) 
-    {
+
       if(keyPressed == false)
       {
         if(pos.y <410)
@@ -63,6 +62,8 @@ class SpaceMan
           }
         }
       }
+    if(controls == true) 
+    {
       if(keyPressed == true)
       {
         if ( (keyCode == RIGHT) )
