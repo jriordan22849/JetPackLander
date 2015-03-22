@@ -1,4 +1,5 @@
 ArrayList<Platform> plat = new ArrayList<Platform>();
+ArrayList<Platform> new_plat = new ArrayList<Platform>();
 
 boolean controls = true;
 boolean start_screen = false;
@@ -6,7 +7,8 @@ boolean playing_screen = true;
 boolean boxes = true;
 boolean bPlatform = true;
 boolean onPlatform = true;
-
+boolean playerOn = false;
+boolean new_platform = false;
 int PScore = 0;
 
 void setup() {
@@ -39,10 +41,13 @@ void draw() {
     
     pscore.display();
   }
+  
 }
 
 void createPlatform() {
+ 
  int num_platform = 1; 
+ 
  for(int i = 0; i < num_platform; i ++) { 
    int PlatformWidth = (int)random(30, 120);
    int PlatformX = (int)random(200, width - PlatformWidth);
@@ -51,3 +56,4 @@ void createPlatform() {
  }
  
 }
+
