@@ -30,30 +30,46 @@ class Platform extends SpaceMan {
   }
   
   void PlayerHitDetection() {
-    if((spaceMan.pos.x+50 >= PlatformX) && (spaceMan.pos.x+15 < PlatformX+PlatformWidth) && (spaceMan.pos.y+100 >= PlatformY))
-    {
-      if(onPlatform == true) {      
-        PScore += 1;
+    for(int i = 0; i < plat.size(); i ++) {
+    if((spaceMan.pos.x+50 >= plat.get(i).PlatformX) && (spaceMan.pos.x+15 < plat.get(i).PlatformX + plat.get(i).PlatformWidth)
+    && (spaceMan.pos.y+100 >= plat.get(i).PlatformY))
+    { 
+      if(spaceMan.pos.x + 30 <= plat.get(i).PlatformX + (3 * PlatformWidth / 5)) {
+        spaceMan.pos.x ++; 
         playerOn = true;
         controls = false;
-        onPlatform = false;    
-      }  
-      
-      if(spaceMan.pos.x + 30 <= PlatformX + (3 * PlatformWidth / 5)) {
-        spaceMan.pos.x ++; 
-      }             
+        onPlatform = false; 
+      }              
     }
     
     if(playerOn == true) {
       beginPlatform--;
-      PlatformX--;
+      plat.get(i).PlatformX--;
       spaceMan.pos.x--;
       
-      if(PlatformX <= 20) {
-        PlatformX = 20;
+      if(beginPlatform + beginPlatformWidth < 0) {
+        bPlatform = false; 
+      }
+      
+      if(plat.get(i).PlatformX <= 20) {
+        create_new_platform();
+        plat.get(i).PlatformX = 20;
         controls = true; 
         playerOn = false;
       }
     } 
+  }
+  }
+  
+  void playerhitdetection2()  {
+    for(int i = 0; i < new_plat.size(); i ++) {
+    if((spaceMan.pos.x+50 >= new_plat.get(i).PlatformX) && (spaceMan.pos.x+15 < new_plat.get(i).PlatformX + new_plat.get(i).PlatformWidth)
+    && (spaceMan.pos.y+100 >= new_plat.get(i).PlatformY))
+    {
+      if(spaceMan.pos.x + 30 <= new_plat.get(i).PlatformX + (3 * PlatformWidth / 5)) {
+        spaceMan.pos.x ++; 
+      }              
+    }
+    }
   }
 }

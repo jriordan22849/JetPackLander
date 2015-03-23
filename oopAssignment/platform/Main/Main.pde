@@ -6,7 +6,7 @@ boolean start_screen = false;
 boolean playing_screen = true;
 boolean boxes = true;
 boolean bPlatform = true;
-boolean onPlatform = true;
+boolean onPlatform = false;
 boolean playerOn = false;
 boolean new_platform = false;
 int PScore = 0;
@@ -39,6 +39,13 @@ void draw() {
        plat.get(i).PlayerHitDetection();
     }
     
+    if(new_platform = true) {
+    for(int i = 0; i < new_plat.size(); i ++) {
+       new_plat.get(i).display(); 
+       new_plat.get(i).playerhitdetection2();
+    }
+    }
+    
     pscore.display();
   }
   
@@ -55,5 +62,17 @@ void createPlatform() {
    plat.add(new Platform(PlatformX, PlatformY, PlatformWidth));
  }
  
+
+ 
+}
+
+void create_new_platform() {
+   int num_platform = 1; 
+    for(int i = 0; i < num_platform; i ++) { 
+   int PlatformWidth = (int)random(30, 120);
+   int PlatformX = (int)random(200, width - PlatformWidth);
+   int PlatformY = height -100;
+   new_plat.add(new Platform(PlatformX, PlatformY, PlatformWidth));  
+  }
 }
 
