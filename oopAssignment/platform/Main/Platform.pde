@@ -67,7 +67,7 @@ class Platform extends SpaceMan {
     if((spaceMan.pos.x+50 >= plat.get(i).PlatformX) && (spaceMan.pos.x+20 < plat.get(i).PlatformX + plat.get(i).PlatformWidth)
     && (spaceMan.pos.y+100 >= plat.get(i).PlatformY))
     { 
-<<<<<<< HEAD
+
       if(spaceMan.pos.x + 50 <= plat.get(i).PlatformX + (PlatformWidth)) {
         //if(spaceMan.pos.x>= plat.get(i).PlatformX ){
           spaceMan.pos.x ++;
@@ -84,12 +84,7 @@ class Platform extends SpaceMan {
       else if(spaceMan.pos.x + 20 <= plat.get(i).PlatformX + (PlatformWidth)) { //left side of platform
         //if(spaceMan.pos.x>= plat.get(i).PlatformX ){
           spaceMan.pos.x --;
-        
-=======
-     // platformYheight = true;
-      if(spaceMan.pos.x + 30 <= plat.get(i).PlatformX + (3 * PlatformWidth / 5)) {
-        spaceMan.pos.x ++; 
->>>>>>> b860cd157cb6034773a30b5e69527817284b9d51
+
       if(playerScore == true) {
           PScore++;
           playerScore = false;
@@ -116,10 +111,7 @@ class Platform extends SpaceMan {
           playerOn = false;
           plat.remove(i);
       }
-    } 
-//    for(int j = 0; j < plat.size(); j ++) {
-//        plat.get(j).PlatformX--;
-//    }
+    }
   }
   }
 }
