@@ -12,6 +12,7 @@ boolean new_platform = false;
 boolean startWidth = true;
 boolean startPlatformX = true;
 boolean playerScore = true;
+boolean platformYheight = false;
 
 int PScore = 0;
 
@@ -72,7 +73,10 @@ void createPlatform() {
      bPlatformWidth = PlatformWidth;
    }
    int PlatformX = (int)random(200, width - PlatformWidth);
-   int PlatformY = height - 100;
+   int PlatformY = height;
+   if(platformYheight == true) {
+     PlatformY = height - 100;
+   }
    plat.add(new Platform(PlatformX, PlatformY, PlatformWidth));
    newPlat.add(new Platform(bPlatformWidth));
    startWidth = false;
