@@ -1,5 +1,5 @@
-Start_Screen start = new Start_Screen();
-class Start_Screen
+StartScreen start = new StartScreen();
+class StartScreen
 {
   int posX = 50;
   int posY = 0;

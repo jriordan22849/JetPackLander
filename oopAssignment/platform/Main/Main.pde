@@ -35,6 +35,8 @@ void draw() {
        background(200);
        spaceMan.update();
        spaceMan.display();
+       println(spaceMan.pos.x +20);
+       println(plat.get(i).PlatformX + plat.get(i).PlatformWidth);
        
        plat.get(i).display(); 
        if(bPlatform == true) {

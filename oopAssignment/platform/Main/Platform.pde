@@ -56,11 +56,26 @@ class Platform extends SpaceMan {
   
   void PlayerHitDetection() {
     for(int i = 0; i < plat.size(); i ++) {
-    if((spaceMan.pos.x+50 >= plat.get(i).PlatformX) && (spaceMan.pos.x+15 < plat.get(i).PlatformX + plat.get(i).PlatformWidth)
+    if((spaceMan.pos.x+50 >= plat.get(i).PlatformX) && (spaceMan.pos.x+20 < plat.get(i).PlatformX + plat.get(i).PlatformWidth)
     && (spaceMan.pos.y+100 >= plat.get(i).PlatformY))
     { 
-      if(spaceMan.pos.x + 30 <= plat.get(i).PlatformX + (3 * PlatformWidth / 5)) {
-        spaceMan.pos.x ++; 
+      if(spaceMan.pos.x + 50 <= plat.get(i).PlatformX + (PlatformWidth)) {
+        //if(spaceMan.pos.x>= plat.get(i).PlatformX ){
+          spaceMan.pos.x ++;
+        
+      if(playerScore == true) {
+          PScore++;
+          playerScore = false;
+        }
+        playerOn = true;
+        controls = false;
+        onPlatform = false; 
+      } 
+      
+      else if(spaceMan.pos.x + 20 <= plat.get(i).PlatformX + (PlatformWidth)) { //left side of platform
+        //if(spaceMan.pos.x>= plat.get(i).PlatformX ){
+          spaceMan.pos.x --;
+        
       if(playerScore == true) {
           PScore++;
           playerScore = false;
