@@ -64,15 +64,14 @@ class Platform extends SpaceMan {
   
   void PlayerHitDetection() {
     for(int i = 0; i < plat.size(); i ++) {
-    if((spaceMan.pos.x+50 >= plat.get(i).PlatformX) && (spaceMan.pos.x+20 < plat.get(i).PlatformX + plat.get(i).PlatformWidth)
-    && (spaceMan.pos.y+100 >= plat.get(i).PlatformY))
-    { 
-
-      if(spaceMan.pos.x + 50 <= plat.get(i).PlatformX + (PlatformWidth)) {
+      if((spaceMan.pos.x+50 >= plat.get(i).PlatformX) && (spaceMan.pos.x+20 < plat.get(i).PlatformX + plat.get(i).PlatformWidth)
+      && (spaceMan.pos.y+100 >= plat.get(i).PlatformY))
+      {   
+        if(spaceMan.pos.x + 50 <= plat.get(i).PlatformX + (PlatformWidth)) {
         //if(spaceMan.pos.x>= plat.get(i).PlatformX ){
           spaceMan.pos.x ++;
         
-      if(playerScore == true) {
+        if(playerScore == true) {
           PScore++;
           playerScore = false;
         }
@@ -83,7 +82,7 @@ class Platform extends SpaceMan {
       
       else if(spaceMan.pos.x + 20 <= plat.get(i).PlatformX + (PlatformWidth)) { //left side of platform
         //if(spaceMan.pos.x>= plat.get(i).PlatformX ){
-          spaceMan.pos.x --;
+          spaceMan.pos.x -= 2;
 
       if(playerScore == true) {
           PScore++;
@@ -94,6 +93,7 @@ class Platform extends SpaceMan {
         onPlatform = false; 
       }              
     }
+    
     
     if(playerOn == true) {
       beginPlatform -= 2;
@@ -112,6 +112,6 @@ class Platform extends SpaceMan {
           plat.remove(i);
       }
     }
-  }
+    }
   }
 }

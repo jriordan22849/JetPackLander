@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="oopAssignment/src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="/Users/macbookpro/Documents/Processing/Java/modes/java/libraries/minim/library/jl1.0.jar"/>
 	<classpathentry kind="lib" path="/Users/macbookpro/Documents/Processing/Java/modes/java/libraries/minim/library/jsminim.jar"/>
 	<classpathentry kind="lib" path="/Users/macbookpro/Documents/Processing/Java/modes/java/libraries/minim/library/minim.jar"/>
@@ -9,5 +8,6 @@
 	<classpathentry kind="lib" path="/Users/macbookpro/Documents/Processing/Java/modes/java/libraries/minim/library/tritonus_aos.jar"/>
 	<classpathentry kind="lib" path="/Users/macbookpro/Documents/Processing/Java/modes/java/libraries/minim/library/tritonus_share.jar"/>
 	<classpathentry kind="lib" path="/Users/macbookpro/Documents/Processing/Java/core/library/core.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="oopAssignment/bin"/>
 </classpath>

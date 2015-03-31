@@ -2,8 +2,9 @@ ArrayList<Platform> plat = new ArrayList<Platform>();
 ArrayList<Platform> newPlat = new ArrayList<Platform>(100);
 
 boolean controls = true;
-boolean start_screen = false;
-boolean playing_screen = true;
+boolean start_screen = true;
+boolean playing_screen = false;
+boolean endScreen = false;
 boolean boxes = true;
 boolean bPlatform = true;
 boolean onPlatform = false;
@@ -14,6 +15,14 @@ boolean startPlatformX = true;
 boolean playerScore = true;
 boolean platformYheight = false;
 
+boolean playButton = false;
+boolean leaderboardButton = false;
+boolean infoButton = false;
+
+boolean speedVar = true;
+boolean pButton = false;
+boolean iButton = false;
+boolean lButton = false;
 int PScore = 0;
 
 void setup() {
@@ -25,13 +34,8 @@ void setup() {
 
 void draw() {
   
-  if(start_screen == true && boxes == true) {
-    background(0);
-    start.display();
-    start.update(); 
-  }
-  if(playing_screen == true)
-  {
+  if(start_screen == true) {
+
     for(int i = 0; i < plat.size(); i ++) {
        background(200);
        spaceMan.update();
@@ -46,14 +50,16 @@ void draw() {
        plat.get(i).PlayerHitDetection();
     }
     
-//    if(new_platform = true) {
-//    for(int i = 0; i < new_plat.size(); i ++) {
-//       new_plat.get(i).display(); 
-//       new_plat.get(i).playerhitdetection2();
-//    }
-//    }
-    
     pscore.display();
+    
+    if(playButton == false && leaderboardButton == false && infoButton == false) {
+    println("mousex " + mouseX + " mouse y" + mouseY); 
+    start.display();
+    start.update(); 
+    }
+  }
+  if(endScreen == true) {
+    end.display();
   }
   
 }
