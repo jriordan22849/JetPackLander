@@ -10,7 +10,7 @@ class StartScreen
   
   public void display() {
     // First box - Play button display
-    fill(#FF8B8B);
+    fill(#ADADAD);
     stroke(#FF0808);
     rect(posX + vSpeed, posY - 200 + speed, posLength, posWidth, 5); 
     
@@ -18,14 +18,14 @@ class StartScreen
     text("Play", (width / 2) - 40 + vSpeed, posY + speed - 160);
     
     // second box on main menu - leaderboard 
-    fill(#FF8B8B);
+    fill(#ADADAD);
     rect(posX + vSpeed, posY - 100 + speed, posLength, posWidth, 5); 
     
     fill(255);
     text("Leaderboard", (width / 2) - 120 + vSpeed, posY + speed - 60);
     
     // third box on main menu - information 
-    fill(#FF8B8B);
+    fill(#ADADAD);
     rect(posX + vSpeed, posY + speed, posLength, posWidth, 5);
     
     fill(255);
@@ -33,19 +33,19 @@ class StartScreen
     
     // First box on main menu - high lighted
     if( (mouseX >= posX) && (mouseX <= posX + posLength) && (mouseY >= posY - 200) && (mouseY <= posY - 200 + posWidth) ) {
-      fill(#FF0808);
+      fill(#8E8E8E);
       text("Play", (width / 2) - 40 + vSpeed, posY + speed - 160);
     }
     
     // second box on main menu - highlighted
     if( (mouseX >= posX) && (mouseX <= posX + posLength) && (mouseY >= posY - 100) && (mouseY <= posY - 100 + posWidth) ) {
-      fill(#FF0808);
+      fill(#8E8E8E);
       text("Leaderboard", (width / 2) - 120 + vSpeed, posY + speed - 60);
     }
     
     // third box on main mneu - highlighted
     if( (mouseX >= posX) && (mouseX <= posX + posLength) && (mouseY >= posY) && (mouseY <= posY + posWidth) ) {
-      fill(#FF0808);
+      fill(#8E8E8E);
       text("Information", (width / 2) - 120 + vSpeed, posY + speed + 40);
     }
   }

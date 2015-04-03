@@ -68,16 +68,16 @@ void draw() {
     }
     
     if(playButton == false && leaderboardButton == false && infoButton == false && endScreen == false) {
-      println("mousex " + mouseX + " mouse y" + mouseY); 
       controls = false;
       start.display();
       start.update(); 
     }
+  }
     if(endScreen == true) {
       controls = false;
+      start_screen = false;
       end.display();
     }
-  }
 }
 
 void createPlatform() {

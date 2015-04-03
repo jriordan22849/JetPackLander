@@ -20,7 +20,7 @@ class SpaceMan
   void display()
   {
       fill(0);
-      
+      stroke(0);
       ellipse(pos.x+30 ,pos.y+30, 20 ,20);    //head
       rect(pos.x+20    ,pos.y+40, 20 ,25,5);  //body
       strokeWeight(9);
