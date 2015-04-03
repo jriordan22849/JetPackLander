@@ -1,8 +1,10 @@
+
 EndScreen end = new EndScreen();
 class EndScreen
 {
    int Ex = (width / 2 + 80);
    int Ey = 75;
+   int hScore;
    
    // box variables; 
    float posX = 66.6;
@@ -35,7 +37,24 @@ class EndScreen
      
      // best score read in from file
      text("BEST SCORE", scoreX - 35, scoreY + 120);
-     text(PScore, scoreX + 35, scoreY + 120 + 50);
+     
+     for(int i = 0; i < data.length; i ++) {
+        for(int j = 0; j < data.length; j ++) {
+          if(data[i] >= data[j]) {
+             hScore = data[i];
+          }
+        } 
+     }
+     if(PScore >= hScore) {
+       String stringPScore = str(PScore);
+       String[] list = split(stringPScore, ' ');
+       saveStrings("data.txt", list);
+       text(PScore, scoreX + 35, scoreY + 120 + 50);
+     }
+     else if(hScore > PScore) {
+       text(hScore, scoreX + 35, scoreY + 120 + 50);
+     }
+     
      
    } 
 }

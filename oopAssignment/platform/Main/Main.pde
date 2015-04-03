@@ -37,7 +37,8 @@ void setup() {
   background(0);
   
   // load text file as a string
-
+  String[] highScore = loadStrings("data.txt");
+  data = int(split(highScore[0],','));
   createPlatform();
 }
 

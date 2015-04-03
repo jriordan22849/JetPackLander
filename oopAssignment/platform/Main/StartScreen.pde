@@ -33,19 +33,19 @@ class StartScreen
     
     // First box on main menu - high lighted
     if( (mouseX >= posX) && (mouseX <= posX + posLength) && (mouseY >= posY - 200) && (mouseY <= posY - 200 + posWidth) ) {
-      fill(#8E8E8E);
+      fill(0);
       text("Play", (width / 2) - 40 + vSpeed, posY + speed - 160);
     }
     
     // second box on main menu - highlighted
     if( (mouseX >= posX) && (mouseX <= posX + posLength) && (mouseY >= posY - 100) && (mouseY <= posY - 100 + posWidth) ) {
-      fill(#8E8E8E);
+      fill(0);
       text("Leaderboard", (width / 2) - 120 + vSpeed, posY + speed - 60);
     }
     
     // third box on main mneu - highlighted
     if( (mouseX >= posX) && (mouseX <= posX + posLength) && (mouseY >= posY) && (mouseY <= posY + posWidth) ) {
-      fill(#8E8E8E);
+      fill(0);
       text("Information", (width / 2) - 120 + vSpeed, posY + speed + 40);
     }
   }
