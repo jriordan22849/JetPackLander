@@ -61,6 +61,7 @@ class StartScreen
     }  
     if(pButton == true) {
       speed -= 4;
+      controls = true;
       if(posY + speed <= - 50) {
         playButton = true;
       } 
