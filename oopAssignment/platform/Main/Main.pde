@@ -1,5 +1,6 @@
 ArrayList<Platform> plat = new ArrayList<Platform>();
 ArrayList<Platform> newPlat = new ArrayList<Platform>(100);
+ArrayList<Background> stars = new ArrayList<Background>(100);
 
 boolean controls = true;
 
@@ -40,14 +41,18 @@ void setup() {
   String[] highScore = loadStrings("data.txt");
   data = int(split(highScore[0],','));
   createPlatform();
+  createStars();
 }
 
 void draw() {
   
   if(start_screen == true) {
     for(int i = 0; i < plat.size(); i ++) {
-       background(200);
-       
+       //background(150);
+       bGround.display1();
+       for(int j = 0; j < stars.size(); j ++) {
+          stars.get(j).drawStars(); 
+       }
        spaceMan.update();
        spaceMan.display();
        
@@ -104,9 +109,18 @@ void createPlatform() {
    newPlat.add(new Platform(bPlatformWidth));
    startWidth = false;
  }
- 
 
- 
 }
+
+ void createStars() {
+    int numStars = 30;
+    int starWL = 2;
+    
+    for(int i = 0; i < numStars; i ++) {
+      int starX = (int)random(0, 600);
+      int starY = (int)random(0, 400);
+      stars.add(new Background(starX, starY, starWL));
+    }
+ }
 
 
