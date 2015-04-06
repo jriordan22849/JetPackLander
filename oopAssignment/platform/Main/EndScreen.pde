@@ -45,6 +45,9 @@ class EndScreen
           }
         } 
      }
+     if(PScore >= 10 || hScore >= 10) {
+         textSize(25);
+     }
      if(PScore >= hScore) {
        String stringPScore = str(PScore);
        String[] list = split(stringPScore, ' ');
@@ -55,9 +58,9 @@ class EndScreen
        text(hScore, scoreX + 35, scoreY + 120 + 50);
      }
      
+     // display the home and play button to user.
      image(img, 80, posY + posHeight + 15);
      image(img2, 270, posY + posHeight + 15);
-     println(mouseX);
      
    } 
 }

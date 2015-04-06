@@ -9,6 +9,9 @@ class StartScreen
   int vSpeed = 0;
   
   public void display() {
+    
+    image(title, (width / 2) + vSpeed - 70, posY - 300 + speed);
+    textSize(40);
     // First box - Play button display
     fill(#ADADAD);
     stroke(#FF0808);
@@ -64,6 +67,7 @@ class StartScreen
       controls = true;
       if(posY + speed <= - 50) {
         playButton = true;
+        scoreToDisplay = true;
       } 
     }
     if(lButton == true) {

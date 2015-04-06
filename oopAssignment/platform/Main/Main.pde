@@ -1,4 +1,4 @@
-PImage img, img2;
+PImage img, img2, title;
 
 ArrayList<Platform> plat = new ArrayList<Platform>();
 ArrayList<Platform> newPlat = new ArrayList<Platform>(100);
@@ -21,6 +21,7 @@ boolean startWidth = true;
 boolean startPlatformX = true;
 boolean playerScore = true;
 boolean platformYheight = false;
+boolean scoreToDisplay = false;
 
 boolean playButton = false;
 boolean leaderboardButton = false;
@@ -41,6 +42,7 @@ void setup() {
   // load images 
   img = loadImage("HomeButton.png");
   img2 = loadImage("PlayAgain.png");
+  title = loadImage("namePic.png");
   // load text file as a string
   String[] highScore = loadStrings("data.txt");
   data = int(split(highScore[0],','));
@@ -81,7 +83,9 @@ void draw() {
     if(endScreen == true) { 
     }
     else {
-      pscore.display();
+      if(scoreToDisplay == true) {
+        pscore.display();
+      }
     }
     
     if(playButton == false && leaderboardButton == false && infoButton == false && endScreen == false) {
@@ -104,7 +108,7 @@ void createPlatform() {
  int bPlatformWidth;
  
  for(int i = 0; i < num_platform; i ++) { 
-   int PlatformWidth = (int)random(30, 120);
+   int PlatformWidth = (int)random(30, 81);
    if(startWidth == true) {
      bPlatformWidth = 30; 
    }
