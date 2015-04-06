@@ -1,3 +1,5 @@
+PImage img, img2;
+
 ArrayList<Platform> plat = new ArrayList<Platform>();
 ArrayList<Platform> newPlat = new ArrayList<Platform>(100);
 ArrayList<Background> stars = new ArrayList<Background>(100);
@@ -36,7 +38,9 @@ int[] data;
 void setup() {
   size(400, 600);
   background(0);
-  
+  // load images 
+  img = loadImage("HomeButton.png");
+  img2 = loadImage("PlayAgain.png");
   // load text file as a string
   String[] highScore = loadStrings("data.txt");
   data = int(split(highScore[0],','));
@@ -49,10 +53,17 @@ void draw() {
   if(start_screen == true) {
     for(int i = 0; i < plat.size(); i ++) {
        //background(150);
+       // draws background
        bGround.display1();
-       for(int j = 0; j < stars.size(); j ++) {
-          stars.get(j).drawStars(); 
+       
+       // draws stars
+       if(bGround.backgroundNumber <= 1) {
+         for(int j = 0; j < stars.size(); j ++) {
+           stars.get(j).drawStars(); 
+         }
        }
+       
+       
        spaceMan.update();
        spaceMan.display();
        
@@ -113,7 +124,7 @@ void createPlatform() {
 }
 
  void createStars() {
-    int numStars = 30;
+    int numStars = 20;
     int starWL = 2;
     
     for(int i = 0; i < numStars; i ++) {

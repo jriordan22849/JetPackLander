@@ -55,6 +55,9 @@ class EndScreen
        text(hScore, scoreX + 35, scoreY + 120 + 50);
      }
      
+     image(img, 80, posY + posHeight + 15);
+     image(img2, 270, posY + posHeight + 15);
+     println(mouseX);
      
    } 
 }
