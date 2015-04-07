@@ -1,4 +1,4 @@
-PImage img, img2, title;
+PImage img, img2, title, tree;
 
 ArrayList<Platform> plat = new ArrayList<Platform>();
 ArrayList<Platform> newPlat = new ArrayList<Platform>(100);
@@ -31,6 +31,7 @@ boolean speedVar = true;
 boolean pButton = false;
 boolean iButton = false;
 boolean lButton = false;
+
 int PScore = 0;
 
 // high score array;
@@ -43,6 +44,7 @@ void setup() {
   img = loadImage("HomeButton.png");
   img2 = loadImage("PlayAgain.png");
   title = loadImage("namePic.png");
+  tree = loadImage("tree.png");
   // load text file as a string
   String[] highScore = loadStrings("data.txt");
   data = int(split(highScore[0],','));
@@ -59,7 +61,7 @@ void draw() {
        bGround.display1();
        
        // draws stars
-       if(bGround.backgroundNumber <= 2) {
+       if(bGround.backgroundNumber <= 1) {
          for(int j = 0; j < stars.size(); j ++) {
            stars.get(j).drawStars(); 
          }
@@ -108,7 +110,7 @@ void createPlatform() {
  int bPlatformWidth;
  
  for(int i = 0; i < num_platform; i ++) { 
-   int PlatformWidth = (int)random(30, 61);
+   int PlatformWidth = (int)random(30, 41);
    if(startWidth == true) {
      bPlatformWidth = 30; 
    }

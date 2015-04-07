@@ -66,31 +66,6 @@ class SpaceMan
     {
       if(keyPressed == true)
       {
-        if ( (keyCode == RIGHT) )
-        {
-          if( pos.x +speed +60> width)
-          {
-            pos.x = pos.x;
-            speed = speed;
-          }
-          else
-          {
-            pos.x += speed;
-          }
-        }
-      
-        if ( (keyCode == LEFT) )
-        {
-          if( pos.x - speed < 0)
-          {
-            pos.x = pos.x;
-            speed = speed;
-          }
-          else
-          {
-            pos.x -= speed;
-          }
-        } 
         if ( (keyCode==UP) )
         {
             if (pos.y +boost < 30)

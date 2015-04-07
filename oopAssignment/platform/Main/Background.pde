@@ -67,7 +67,9 @@ class Background {
       if(backgroundNumber == 2) {
         // draw half moon
         background(#7E7E7E);
-
+        image(tree, -40, 0);
+        
+        
       }
   }
 }
