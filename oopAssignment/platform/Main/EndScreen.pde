@@ -1,6 +1,6 @@
 
 EndScreen end = new EndScreen();
-class EndScreen
+class EndScreen extends SpaceMan
 {
    int Ex = (width / 2 + 80);
    int Ey = 75;
@@ -11,6 +11,11 @@ class EndScreen
    float posY = 120; // 600 / 5
    float posWidth = 133.3 * 2;
    float posHeight = 250;
+   
+   float imageY = 600 / 1.55;
+   float imageX1 = 80;
+   float imageX2 = 270;
+   int picSize = 50;
    
    float scoreX = 400 / 2.666666;
    float scoreY = 600 / 3.52;
@@ -59,8 +64,20 @@ class EndScreen
      }
      
      // display the home and play button to user.
-     image(img, 80, posY + posHeight + 15);
-     image(img2, 270, posY + posHeight + 15);
+     image(img, imageX1, imageY);
+     image(img2, imageX2, imageY);
+     
+     if(mousePressed) {
+        // home button if clicked 
+        if( (mouseX >= imageX1) && (mouseX <= imageX1 + picSize) && (mouseY >= imageY) && (mouseY <= imageY + picSize) ) { 
+          
+        }
+        
+        // play again button if clicked.
+        if( (mouseX >= imageX2) && (mouseX <= imageX2 + picSize) && (mouseY >= imageY) && (mouseY <= imageY + picSize) ) {
+          
+        }
+     }
      
    } 
 }

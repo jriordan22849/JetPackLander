@@ -6,7 +6,7 @@ ArrayList<Background> stars = new ArrayList<Background>(100);
 
 boolean controls = true;
 
-boolean start_screen = true;
+boolean startScreen = true;
 boolean playing_screen = false;
 boolean endScreen = false;
 
@@ -52,14 +52,14 @@ void setup() {
 
 void draw() {
   
-  if(start_screen == true) {
+  if(startScreen == true) {
     for(int i = 0; i < plat.size(); i ++) {
        //background(150);
        // draws background
        bGround.display1();
        
        // draws stars
-       if(bGround.backgroundNumber <= 1) {
+       if(bGround.backgroundNumber <= 2) {
          for(int j = 0; j < stars.size(); j ++) {
            stars.get(j).drawStars(); 
          }
@@ -96,7 +96,7 @@ void draw() {
   }
     if(endScreen == true) {
       controls = false;
-      start_screen = false;
+      startScreen = false;
       end.display();
     }
 }
@@ -108,7 +108,7 @@ void createPlatform() {
  int bPlatformWidth;
  
  for(int i = 0; i < num_platform; i ++) { 
-   int PlatformWidth = (int)random(30, 81);
+   int PlatformWidth = (int)random(30, 61);
    if(startWidth == true) {
      bPlatformWidth = 30; 
    }
