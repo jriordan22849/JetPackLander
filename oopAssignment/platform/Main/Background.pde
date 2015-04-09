@@ -68,8 +68,6 @@ class Background {
         // draw half moon
         background(#7E7E7E);
         image(tree, -40, 0);
-        
-        
       }
   }
 }

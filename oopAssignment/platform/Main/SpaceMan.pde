@@ -41,12 +41,11 @@ class SpaceMan
       
   }
   void keyReleased() 
-        {
-            if (boost > 0) 
-            {
-                ++boost;
-            } 
-        }
+  {
+    if (boost > 0)  {
+      ++boost;
+    } 
+  }
   void keyPressed()
   {
 
@@ -59,6 +58,7 @@ class SpaceMan
           {
             pos.y=pos.y +2;
             pos.x=pos.x +2;
+            controls = false;
           }
         }
       }

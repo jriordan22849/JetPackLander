@@ -1,4 +1,3 @@
-
 PlayerScore pscore = new PlayerScore();
 class PlayerScore {
 

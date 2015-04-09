@@ -34,7 +34,7 @@ class Platform extends SpaceMan {
       startPlatformX = false;
     }
     rect(PlatformX, PlatformY + pSpeed, PlatformWidth, 100, 5);
-    pSpeed -= 2;
+    pSpeed -= 4;
     if(PlatformY + pSpeed <= height - 100) {
       pSpeed = 0;
       PlatformY = height - 100; 
@@ -96,9 +96,9 @@ class Platform extends SpaceMan {
     }
     
       if(playerOn == true) {
-        beginPlatform -= 2;
-        plat.get(i).PlatformX -= 2;
-        spaceMan.pos.x -= 2;
+        beginPlatform -= 4;
+        plat.get(i).PlatformX -= 4;
+        spaceMan.pos.x -= 4;
  
         if(plat.get(i).PlatformX <= 20) {
           createPlatform();
