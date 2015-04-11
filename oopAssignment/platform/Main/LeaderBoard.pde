@@ -53,7 +53,7 @@ class leaderBoard {
      
      textSize(30);
      fill(0);
-     text("Best Score:", lx * 2 - 10, ly * 2);
+     text("Best Score:", lx * 2 - 10, ly * 2.25);
      
      textSize(tSize);
      fill(#FF1A1A);
@@ -69,34 +69,29 @@ class leaderBoard {
      
     if(hScore > PScore) {
       if(hScore >= 10) {
-       text(hScore, (width / 2.58), ly * 3);
+       text(hScore, (width / 2.58), ly * 3.25);
       }
       
       if(hScore < 10) {
-        text(hScore, (width / 2.28), ly * 3);
+        text(hScore, (width / 2.28), ly * 3.25);
       }
       //leaderboard image
       image(leaderBoardImage, (width / 2) - 150, ly - 50);
       
       
       // home button image
-      image(homeButtonImage, (width / 2) - 25, ly * 3.5);
+      image(homeButtonImage, (width / 2) - 25, ly * 4.5);
      }
    }
      
-     void update() {
-//      if( (mouseX >= 175) && (mouseX <= 175 + 50 ) && (mouseY >= 350) && (mouseY <= 350 + 50) ) {
-//         background(0);
-//      }
-      
+     void update() {      
       if(mousePressed) {
-      if( (mouseX >= (width / 2) - 25) && (mouseX <= (width / 2) - 25 + imageWL) && (mouseY >= ly *3.5) && (mouseY <= (ly * 3.5) + imageWL) ) {
-        leaderboardButton = false;
-        lButton = false;
-        speedVar = false;
-        startScreen = true;
-
-      }
+        if( (mouseX >= (width / 2) - 25) && (mouseX <= (width / 2) - 25 + imageWL) && (mouseY >= ly * 4.5) && (mouseY <= (ly * 4.5) + imageWL) ) {
+          leaderboardButton = false;
+          lButton = false;
+          speedVar = false;
+          startScreen = true;
+        }
       } 
      }
    }

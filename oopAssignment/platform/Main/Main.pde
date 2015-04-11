@@ -1,4 +1,4 @@
-PImage img, img2, title, tree, homeButtonImage, leaderBoardImage;
+PImage img, img2, title, tree, homeButtonImage, leaderBoardImage, infoScreen;
 
 ArrayList<Platform> plat = new ArrayList<Platform>();
 ArrayList<Platform> newPlat = new ArrayList<Platform>(100);
@@ -8,9 +8,11 @@ boolean controls = true;
 
 boolean startScreen = true;
 boolean playingScreen = false;
+boolean informationScreen = false;
 boolean endScreen = false;
 
 boolean boxes = true;
+boolean click = true;
 
 boolean bPlatform = true;
 boolean onPlatform = false;
@@ -48,6 +50,7 @@ void setup() {
   tree = loadImage("tree.png");
   homeButtonImage = loadImage("HomeButton.png");
   leaderBoardImage = loadImage("leaderboardImage.png");
+  infoScreen = loadImage("infoScreen.png");
   
   // load text file as a string
   String[] highScore = loadStrings("data.txt");
@@ -107,6 +110,12 @@ void draw() {
       controls = false;
       lBoard.display();
       lBoard.update();
+    }
+    
+    if(informationScreen == true) {
+       controls = false;
+       info.display(); 
+       info.update();
     }
     
  

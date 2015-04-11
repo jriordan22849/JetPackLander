@@ -14,7 +14,7 @@ class EndScreen extends SpaceMan
    
    float imageY = 600 / 1.55;
    float imageX1 = 80;
-   float imageX2 = 270;
+   float imageX2 = (400 / 2) - 25;
    int picSize = 50;
    
    float scoreX = 400 / 2.666666;
@@ -64,22 +64,17 @@ class EndScreen extends SpaceMan
      }
      
      
-     // display the home and play button to user.
-     image(img, imageX1, imageY);
+     // display the play button to user.
      image(img2, imageX2, imageY);
      
      if(mousePressed) {
-        // home button if clicked 
-        if( (mouseX >= imageX1) && (mouseX <= imageX1 + picSize) && (mouseY >= imageY) && (mouseY <= imageY + picSize) ) { 
+        
+        // play again button if clicked.
+        if( (mouseX >= imageX2) && (mouseX <= imageX2 + picSize) && (mouseY >= imageY) && (mouseY <= imageY + picSize) ) {
            endScreen = false;
            startScreen = true;
            controls = true;
            PScore = 0;
-        }
-        
-        // play again button if clicked.
-        if( (mouseX >= imageX2) && (mouseX <= imageX2 + picSize) && (mouseY >= imageY) && (mouseY <= imageY + picSize) ) {
-          
         }
      }
      

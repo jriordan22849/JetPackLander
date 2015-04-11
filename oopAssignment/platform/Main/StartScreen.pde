@@ -72,6 +72,7 @@ class StartScreen
     
     if(lButton == true) {
       vSpeed -= 4;
+      leaderboardButton = true;
       if(posX + posLength + vSpeed <= -50) {
         leaderboardButton = true;
         vSpeed = 0;
@@ -79,9 +80,10 @@ class StartScreen
     }
     
     if(iButton == true) {
+      informationScreen = true;
       vSpeed += 4;
       if(posX <= - width + 50) {
-        infoButton = true;
+        informationScreen = true;
         vSpeed = 0;
       } 
     }
