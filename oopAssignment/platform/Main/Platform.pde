@@ -59,7 +59,6 @@ class Platform extends SpaceMan {
       fill(255);
       stroke(255);
       rect(beginPlatform, PlatformY1, beginPlatformWidth, height - 150, 5);
-      println(beginPlatformWidth);
   }
   
   void PlayerHitDetection() {

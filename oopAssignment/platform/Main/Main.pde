@@ -1,4 +1,4 @@
-PImage img, img2, title, tree;
+PImage img, img2, title, tree, homeButtonImage, leaderBoardImage;
 
 ArrayList<Platform> plat = new ArrayList<Platform>();
 ArrayList<Platform> newPlat = new ArrayList<Platform>(100);
@@ -7,7 +7,7 @@ ArrayList<Background> stars = new ArrayList<Background>(100);
 boolean controls = true;
 
 boolean startScreen = true;
-boolean playing_screen = false;
+boolean playingScreen = false;
 boolean endScreen = false;
 
 boolean boxes = true;
@@ -46,6 +46,8 @@ void setup() {
   img2 = loadImage("PlayAgain.png");
   title = loadImage("namePic.png");
   tree = loadImage("tree.png");
+  homeButtonImage = loadImage("HomeButton.png");
+  leaderBoardImage = loadImage("leaderboardImage.png");
   
   // load text file as a string
   String[] highScore = loadStrings("data.txt");
@@ -93,18 +95,29 @@ void draw() {
       }
     }
     
+   
     // Main mneu booleans to start the game
     if(playButton == false && leaderboardButton == false && infoButton == false && endScreen == false) {
       controls = false;
       start.display();
       start.update(); 
     }
+    
+    if(leaderboardButton == true) {
+      controls = false;
+      lBoard.display();
+      lBoard.update();
+    }
+    
+ 
   }
     if(endScreen == true) {
       controls = false;
-      startScreen = false;
+      startScreen = true;
+      spaceMan.pos.x = 0;
       end.display();
     }
+  
 }
 
 // Creates platform using adding a random x and width to each platform

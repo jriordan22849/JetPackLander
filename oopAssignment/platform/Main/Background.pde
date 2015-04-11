@@ -41,7 +41,6 @@ class Background {
   // display different background despending on the background number.
   void display1() {
       background(#7C7A7A);
-          println("background number " + backgroundNumber);
       if(backgroundNumber == 0) {
         // draw moon
         fill(#E3E3E3);

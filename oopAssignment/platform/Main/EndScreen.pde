@@ -63,6 +63,7 @@ class EndScreen extends SpaceMan
        text(hScore, scoreX + 35, scoreY + 120 + 50);
      }
      
+     
      // display the home and play button to user.
      image(img, imageX1, imageY);
      image(img2, imageX2, imageY);
@@ -70,7 +71,10 @@ class EndScreen extends SpaceMan
      if(mousePressed) {
         // home button if clicked 
         if( (mouseX >= imageX1) && (mouseX <= imageX1 + picSize) && (mouseY >= imageY) && (mouseY <= imageY + picSize) ) { 
-          
+           endScreen = false;
+           startScreen = true;
+           controls = true;
+           PScore = 0;
         }
         
         // play again button if clicked.
