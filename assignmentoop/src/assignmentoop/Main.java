@@ -1,3 +1,10 @@
+/* Student name: Jonathan Riordan C13432152
+ * Student name: Martin Quinn
+ * OOP Assignment 3
+ * 12th of April
+ * Jetpacklander game
+ */
+
 package assignmentoop;
 import processing.core.*;
 import processing.data.*;
@@ -338,6 +345,12 @@ public class Main extends PApplet {
                 text(tempScore, scoreX + 35, scoreY + 120 + 50);
             }
             
+            if(tempScore < hScore) {
+                textSize(30);
+                text(hScore, scoreX + 35, scoreY + 120 + 50);
+            }
+            
+            
             
             
             // display the play button to user.
@@ -588,4 +601,14 @@ public class Main extends PApplet {
             }// end of for loop
         }
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
