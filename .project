@@ -14,4 +14,46 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>images/HomeButton.png</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/oopAssignment/platform/Main/HomeButton.png</locationURI>
+		</link>
+		<link>
+			<name>images/PlayAgain.png</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/oopAssignment/platform/Main/PlayAgain.png</locationURI>
+		</link>
+		<link>
+			<name>images/data.txt</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/oopAssignment/platform/Main/data.txt</locationURI>
+		</link>
+		<link>
+			<name>images/hb.png</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/oopAssignment/platform/Main/hb.png</locationURI>
+		</link>
+		<link>
+			<name>images/infoScreen.png</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/oopAssignment/platform/Main/infoScreen.png</locationURI>
+		</link>
+		<link>
+			<name>images/leaderboardImage.png</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/oopAssignment/platform/Main/leaderboardImage.png</locationURI>
+		</link>
+		<link>
+			<name>images/namePic.png</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/oopAssignment/platform/Main/namePic.png</locationURI>
+		</link>
+		<link>
+			<name>images/tree.png</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/oopAssignment/platform/Main/tree.png</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

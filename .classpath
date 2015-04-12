@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="oopAssignment/src"/>
+	<classpathentry kind="src" path="images"/>
 	<classpathentry kind="lib" path="/Users/macbookpro/Documents/Processing/Java/modes/java/libraries/minim/library/jl1.0.jar"/>
 	<classpathentry kind="lib" path="/Users/macbookpro/Documents/Processing/Java/modes/java/libraries/minim/library/jsminim.jar"/>
 	<classpathentry kind="lib" path="/Users/macbookpro/Documents/Processing/Java/modes/java/libraries/minim/library/minim.jar"/>

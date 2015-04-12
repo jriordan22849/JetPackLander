@@ -51,7 +51,7 @@ class EndScreen extends SpaceMan
         } 
      }
      if(PScore >= 10 || hScore >= 10) {
-         textSize(25);
+         textSize(30);
      }
      if(PScore >= hScore) {
        String stringPScore = str(PScore);
@@ -60,6 +60,7 @@ class EndScreen extends SpaceMan
        text(PScore, scoreX + 35, scoreY + 120 + 50);
      }
      else if(hScore > PScore) {
+       textSize(30);
        text(hScore, scoreX + 35, scoreY + 120 + 50);
      }
      

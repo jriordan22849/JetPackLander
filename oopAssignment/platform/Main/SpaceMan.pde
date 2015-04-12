@@ -56,8 +56,8 @@ class SpaceMan
           boost = 0;
           if(pos.y != 410)
           {
-            pos.y=pos.y +2;
-            pos.x=pos.x +2;
+            pos.y=pos.y + 3;
+            pos.x=pos.x + 3;
             controls = false;
           }
         }

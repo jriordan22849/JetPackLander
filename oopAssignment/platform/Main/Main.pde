@@ -87,18 +87,7 @@ void draw() {
        }
        plat.get(i).PlayerHitDetection();
     }
-    
-    // if end screen is true, dont display the score.
-    // score is only displayed once the main menu is gone.
-    if(endScreen == true) { 
-    }
-    else {
-      if(scoreToDisplay == true) {
-        pscore.display();
-      }
-    }
-    
-   
+      
     // Main mneu booleans to start the game
     if(playButton == false && leaderboardButton == false && infoButton == false && endScreen == false) {
       controls = false;
@@ -120,11 +109,19 @@ void draw() {
     
  
   }
+  
+     // if end screen is true, dont display the score.
+    // score is only displayed once the main menu is gone.
     if(endScreen == true) {
       controls = false;
       startScreen = true;
       spaceMan.pos.x = 0;
       end.display();
+    }
+    else {
+      if(scoreToDisplay == true) {
+        pscore.display();
+      }
     }
   
 }
