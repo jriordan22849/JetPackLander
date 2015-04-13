@@ -5,7 +5,7 @@ class Background {
   int starX;
   int starY;
   int starWL;
-  int backgroundNumber = (int)random(0,3);;
+  int backgroundNumber =3;// (int)random(0,4);
   
   // width and height for circle
   int wl = 300;
@@ -41,6 +41,7 @@ class Background {
   // display different background despending on the background number.
   void display1() {
       background(#7C7A7A);
+      
       if(backgroundNumber == 0) {
         // draw moon
         fill(#E3E3E3);
@@ -68,5 +69,28 @@ class Background {
         background(#7E7E7E);
         image(tree, -40, 0);
       }
+      
+      if(backgroundNumber == 3){
+        //Buildings
+        int buildX1=40;
+        int buildX2=80;
+        background(#7E7E7E);
+        fill(#525252);
+        stroke(0);
+        rect(buildX1,250,width/3,height);
+        fill(0);
+        stroke(0);
+        rect(50,290,width/8,height/12);
+        rect(110,290,width/8,height/12);
+        rect(50,350,width/8,height/12);
+        rect(110,350,width/8,height/12);
+        rect(50,410,width/8,height/12);
+        rect(110,410,width/8,height/12);
+        rect(50,470,width/8,height/12);
+        rect(110,470,width/8,height/12);
+        rect(50,530,width/8,height/12);
+        rect(110,530,width/8,height/12);
+      }
+        
   }
 }

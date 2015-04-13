@@ -72,6 +72,7 @@ class EndScreen extends SpaceMan
         
         // play again button if clicked.
         if( (mouseX >= imageX2) && (mouseX <= imageX2 + picSize) && (mouseY >= imageY) && (mouseY <= imageY + picSize) ) {
+           bGround.backgroundNumber = (int)random(0,4);
            endScreen = false;
            startScreen = true;
            controls = true;
