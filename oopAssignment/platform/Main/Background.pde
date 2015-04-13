@@ -75,7 +75,67 @@ class Background {
         int buildX1=40;
         int buildX2=80;
         background(#7E7E7E);
-        fill(#525252);
+        //Background building
+        
+        fill(#363535);
+        stroke(0);
+        rect(10,100,4*width/5,height);
+        fill(0);
+        stroke(0);
+        rect(20,130,width/8,height/12);
+        rect(80,130,width/8,height/12);
+        rect(140,130,width/8,height/12);
+        rect(200,130,width/8,height/12);
+        rect(260,130,width/8,height/12);
+        
+        rect(20,190,width/8,height/12);
+        rect(20,250,width/8,height/12);
+        rect(20,310,width/8,height/12);
+        rect(20,370,width/8,height/12);
+        rect(20,430,width/8,height/12);
+        rect(20,490,width/8,height/12);
+        rect(20,550,width/8,height/12);
+        
+        rect(260,190,width/8,height/12);
+        rect(260,250,width/8,height/12);
+        rect(260,310,width/8,height/12);
+        rect(260,370,width/8,height/12);
+        rect(260,430,width/8,height/12);
+        rect(260,490,width/8,height/12);
+        rect(260,550,width/8,height/12);
+        
+        
+        //Middleground building
+        
+        fill(#504E4E);
+        stroke(0);
+        rect(80,150,width/2,height);
+        fill(0);
+        stroke(0);
+        rect(100,190,width/8,height/12);
+        rect(155,190,width/8,height/12);
+        rect(210,190,width/8,height/12);
+        rect(100,250,width/8,height/12);
+        rect(155,250,width/8,height/12);
+        rect(210,250,width/8,height/12);
+        rect(100,310,width/8,height/12);
+        rect(155,310,width/8,height/12);
+        rect(210,310,width/8,height/12);
+        rect(100,370,width/8,height/12);
+        rect(155,370,width/8,height/12);
+        rect(210,370,width/8,height/12);
+        rect(100,430,width/8,height/12);
+        rect(155,430,width/8,height/12);
+        rect(210,430,width/8,height/12);
+        rect(100,490,width/8,height/12);
+        rect(155,490,width/8,height/12);
+        rect(210,490,width/8,height/12);
+        rect(100,550,width/8,height/12);
+        rect(155,550,width/8,height/12);
+        rect(210,550,width/8,height/12);
+        
+        //forground building
+        fill(#5F5E5E);
         stroke(0);
         rect(buildX1,250,width/3,height);
         fill(0);
@@ -90,6 +150,23 @@ class Background {
         rect(110,470,width/8,height/12);
         rect(50,530,width/8,height/12);
         rect(110,530,width/8,height/12);
+        
+         //forground building
+        fill(#5F5E5E);
+        stroke(0);
+        rect(260,250,width/3,height);
+        fill(0);
+        stroke(0);
+        rect(270,290,width/8,height/12);
+        rect(330,290,width/8,height/12);
+        rect(270,350,width/8,height/12);
+        rect(330,350,width/8,height/12);
+        rect(270,410,width/8,height/12);
+        rect(330,410,width/8,height/12);
+        rect(270,470,width/8,height/12);
+        rect(330,470,width/8,height/12);
+        rect(270,530,width/8,height/12);
+        rect(330,530,width/8,height/12);
       }
         
   }
