@@ -80,9 +80,9 @@ class Platform extends SpaceMan {
         onPlatform = false; 
       } 
       
-      else if(spaceMan.pos.x + 20 <= plat.get(i).PlatformX + (PlatformWidth)) { //left side of platform
+      else if(spaceMan.pos.x <= plat.get(i).PlatformX + (PlatformWidth)) { //left side of platform
         //if(spaceMan.pos.x>= plat.get(i).PlatformX ){
-          spaceMan.pos.x -= 2;
+          spaceMan.pos.x --;
 
         if(playerScore == true) {
           PScore++;

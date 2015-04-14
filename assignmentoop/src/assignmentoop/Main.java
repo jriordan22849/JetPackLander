@@ -1,5 +1,5 @@
 /* Student name: Jonathan Riordan C13432152
- * Student name: Martin Quinn
+ * Student name: Martin Quinn C13477058
  * OOP Assignment 3
  * 12th of April
  * Jetpacklander game

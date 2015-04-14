@@ -5,7 +5,7 @@ class Background {
   int starX;
   int starY;
   int starWL;
-  int backgroundNumber =3;// (int)random(0,4);
+  int backgroundNumber = (int)random(0,4);
   
   // width and height for circle
   int wl = 300;

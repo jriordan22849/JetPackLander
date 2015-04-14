@@ -20,7 +20,7 @@ class SpaceMan
   void display()
   {
       fill(0);
-      stroke(0);
+      stroke(255);
       ellipse(pos.x+30 ,pos.y+30, 20 ,20);    //head
       rect(pos.x+20    ,pos.y+40, 20 ,25,5);  //body
       strokeWeight(9);
@@ -30,13 +30,13 @@ class SpaceMan
       strokeWeight(1);
       stroke(255);
       
-      rect(pos.x+18,pos.y+80,15,10,4);             //left foot
-      rect(pos.x+35,pos.y+80,15,10,4);             //right foot
+      rect(pos.x+18,pos.y+80,15,9,4);            //left foot
+      rect(pos.x+35,pos.y+80,15,9,4);            //right foot
       ellipse(pos.x+15,pos.y+40,10,10);           //jet pack top
       rect(pos.x+10,pos.y+40,10,22);              //jet pack
       
       rect(pos.x+10,pos.y+25,40,2);               //hat rim
-      rect(pos.x+20,pos.y+15,20,10);               //hat top
+      rect(pos.x+20,pos.y+15,20,10);              //hat top
       
       
   }
