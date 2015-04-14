@@ -21,7 +21,7 @@ import java.io.OutputStream;
 import java.io.IOException;
 
 public class Main extends PApplet {
-    
+
     Information info = new Information(this);
     StartScreen start = new StartScreen(this);
     SpaceMan spaceMan = new SpaceMan(this);
@@ -29,7 +29,7 @@ public class Main extends PApplet {
     leaderBoard lBoard = new leaderBoard();
     Background bGround = new Background();
     EndScreen end = new EndScreen();
-    
+
     static PImage img;
     PImage img2;
     static PImage title;
@@ -37,22 +37,22 @@ public class Main extends PApplet {
     PImage homeButtonImage;
     PImage leaderBoardImage;
     static PImage infoScreen;
-    
+
     ArrayList<Platform> plat = new ArrayList<Platform>();
     ArrayList<Platform> newPlat = new ArrayList<Platform>(100);
     ArrayList<Background> stars = new ArrayList<Background>(100);
-    
+
     static boolean controls = true;
-    
+
     static boolean startScreen = true;
     boolean playingScreen = false;
     static boolean informationScreen = false;
     boolean endScreen = false;
-    
+
     boolean boxes = true;
     boolean click = true;
     boolean scoretemp = false;
-    
+
     boolean bPlatform = true;
     boolean onPlatform = false;
     boolean playerOn = false;
@@ -63,25 +63,25 @@ public class Main extends PApplet {
     boolean playerScore = true;
     boolean platformYheight = false;
     static boolean scoreToDisplay = false;
-    
+
     static boolean playButton = false;
     static boolean leaderboardButton = false;
     boolean infoButton = false;
-    
+
     static boolean speedVar = true;
     static boolean pButton = false;
     static boolean iButton = false;
     static boolean lButton = false;
-    
+
     static int PScore = 0;
-    
+
     // high score array;
     int[] data;
-    
+
     public void setup() {
         size(400, 600);
         background(0);
-        
+
         // load images
         img = loadImage("HomeButton.png");
         img2 = loadImage("PlayAgain.png");
@@ -90,22 +90,22 @@ public class Main extends PApplet {
         homeButtonImage = loadImage("HomeButton.png");
         leaderBoardImage = loadImage("leaderboardImage.png");
         infoScreen = loadImage("infoScreen.png");
-        
+
         // load text file as a string
         String[] highScore = loadStrings("data.txt");
         data = PApplet.parseInt(split(highScore[0],','));
-        
+
         createPlatform();
         createStars();
     }
-    
+
     public void draw() {
-        
+
         if(startScreen == true) {
             for(int i = 0; i < plat.size(); i ++) {
                 // draws background
                 bGround.display1();
-                
+
                 // draws stars if the background number is less than or equal to 1,
                 // as they are the space backgrounds
                 if(bGround.backgroundNumber <= 1) {
@@ -113,42 +113,42 @@ public class Main extends PApplet {
                         stars.get(j).drawStars();
                     }
                 }
-                
+
                 // calls spaceman function to draw and update the display of the character
                 spaceMan.update();
                 spaceMan.display();
-                
+
                 // Displays the platform
                 plat.get(i).display();
-                
+
                 if(bPlatform == true) {
                     plat.get(i).beginingPlatform();
                 }
                 plat.get(i).PlayerHitDetection();
             }
-            
+
             // Main mneu booleans to start the game
             if(playButton == false && leaderboardButton == false && infoButton == false && endScreen == false) {
                 controls = false;
                 start.display();
                 start.update();
             }
-            
+
             if(leaderboardButton == true) {
                 controls = false;
                 lBoard.display();
                 lBoard.update();
             }
-            
+
             if(informationScreen == true) {
                 controls = false;
                 info.display();
                 info.update();
             }
-            
-            
+
+
         }
-        
+
         // if end screen is true, dont display the score.
         // score is only displayed once the main menu is gone.
         if(endScreen == true) {
@@ -162,31 +162,31 @@ public class Main extends PApplet {
                 pscore.display();
             }
         }
-        
+
     }
-    
+
     // Creates platform using adding a random x and width to each platform
     // the platform is then added to an arrayList
     public void createPlatform() {
-        
+
         int num_platform = 1;
         int space = 0;
         int bPlatformWidth;
-        
+
         for(int i = 0; i < num_platform; i ++) {
-            
+
             int PlatformWidth = (int)random(30, 41);
-            
+
             if(startWidth == true) {
                 bPlatformWidth = 30;
             }
             else {
                 bPlatformWidth = PlatformWidth;
             }
-            
+
             int PlatformX = (int)random(200, width - PlatformWidth);
             int PlatformY = height;
-            
+
             if(platformYheight == true) {
                 PlatformY = height - 100;
             }
@@ -195,50 +195,50 @@ public class Main extends PApplet {
             newPlat.add(new Platform(bPlatformWidth));
             startWidth = false;
         }
-        
+
     }
-    
+
     // Function to create Stars in the background
     // Random x and y positions are giving.
     public void createStars() {
         int numStars = 20;
         int starWL = 2;
-        
+
         for(int i = 0; i < numStars; i ++) {
             int starX = (int)random(0, 600);
             int starY = (int)random(0, 400);
             stars.add(new Background(starX, starY, starWL));
         }
     }
-    
-    
+
+
     class Background {
-        
+
         int starX;
         int starY;
         int starWL;
-        int backgroundNumber = (int)random(0,3);;
-        
+        int backgroundNumber = (int)random(0,4);
+
         // width and height for circle
         int wl = 300;
-        
+
         // sun variables
         int sunX = 300;
         int sunY = 100;
         int sunWL = 100;
         int numLines = 5;
         int spacing = 0;
-        
-        
+
+
         Background(int starX, int starY, int starWL) {
             this.starX = starX;
             this.starY = starY;
             this.starWL = starWL;
         }
-        
+
         Background() {
         }
-        
+
         // displays stars from the an arraylist which have random x and y co-ordinates
         public void drawStars() {
             fill(255);
@@ -247,8 +247,8 @@ public class Main extends PApplet {
                 ellipse(stars.get(i).starX, stars.get(i).starY, stars.get(i).starWL, stars.get(i).starWL);
             }
         }
-        
-        
+
+
         // display different background despending on the background number.
         public void display1() {
             background(0xff7C7A7A);
@@ -264,69 +264,168 @@ public class Main extends PApplet {
                 // draw half moon
                 fill(0xff7C7A7A);
                 stroke(0xffE3E3E3);
-                
+
                 fill(0xffE3E3E3);
                 ellipse(width / 2, height / 3, wl, wl);
-                
+
                 fill(0xff7C7A7A);
                 stroke(0xff7C7A7A);
                 ellipse(width / 3, height / 3, wl, wl);
-                
+
             }
-            
+
             if(backgroundNumber == 2) {
                 // draw half moon
                 background(0xff7E7E7E);
                 image(tree, -40, 0);
             }
+
+            if(backgroundNumber == 3){
+              //Buildings
+              int buildX1=40;
+              int buildX2=80;
+              background(#7E7E7E);
+              //Background building
+
+              fill(#363535);
+              stroke(0);
+              rect(10,100,4*width/5,height);
+              fill(0);
+              stroke(0);
+              rect(20,130,width/8,height/12);
+              rect(80,130,width/8,height/12);
+              rect(140,130,width/8,height/12);
+              rect(200,130,width/8,height/12);
+              rect(260,130,width/8,height/12);
+
+              rect(20,190,width/8,height/12);
+              rect(20,250,width/8,height/12);
+              rect(20,310,width/8,height/12);
+              rect(20,370,width/8,height/12);
+              rect(20,430,width/8,height/12);
+              rect(20,490,width/8,height/12);
+              rect(20,550,width/8,height/12);
+
+              rect(260,190,width/8,height/12);
+              rect(260,250,width/8,height/12);
+              rect(260,310,width/8,height/12);
+              rect(260,370,width/8,height/12);
+              rect(260,430,width/8,height/12);
+              rect(260,490,width/8,height/12);
+              rect(260,550,width/8,height/12);
+
+
+              //Middleground building
+
+              fill(#504E4E);
+              stroke(0);
+              rect(80,150,width/2,height);
+              fill(0);
+              stroke(0);
+              rect(100,190,width/8,height/12);
+              rect(155,190,width/8,height/12);
+              rect(210,190,width/8,height/12);
+              rect(100,250,width/8,height/12);
+              rect(155,250,width/8,height/12);
+              rect(210,250,width/8,height/12);
+              rect(100,310,width/8,height/12);
+              rect(155,310,width/8,height/12);
+              rect(210,310,width/8,height/12);
+              rect(100,370,width/8,height/12);
+              rect(155,370,width/8,height/12);
+              rect(210,370,width/8,height/12);
+              rect(100,430,width/8,height/12);
+              rect(155,430,width/8,height/12);
+              rect(210,430,width/8,height/12);
+              rect(100,490,width/8,height/12);
+              rect(155,490,width/8,height/12);
+              rect(210,490,width/8,height/12);
+              rect(100,550,width/8,height/12);
+              rect(155,550,width/8,height/12);
+              rect(210,550,width/8,height/12);
+
+              //forground building
+              fill(#5F5E5E);
+              stroke(0);
+              rect(buildX1,250,width/3,height);
+              fill(0);
+              stroke(0);
+              rect(50,290,width/8,height/12);
+              rect(110,290,width/8,height/12);
+              rect(50,350,width/8,height/12);
+              rect(110,350,width/8,height/12);
+              rect(50,410,width/8,height/12);
+              rect(110,410,width/8,height/12);
+              rect(50,470,width/8,height/12);
+              rect(110,470,width/8,height/12);
+              rect(50,530,width/8,height/12);
+              rect(110,530,width/8,height/12);
+
+               //forground building
+              fill(#5F5E5E);
+              stroke(0);
+              rect(260,250,width/3,height);
+              fill(0);
+              stroke(0);
+              rect(270,290,width/8,height/12);
+              rect(330,290,width/8,height/12);
+              rect(270,350,width/8,height/12);
+              rect(330,350,width/8,height/12);
+              rect(270,410,width/8,height/12);
+              rect(330,410,width/8,height/12);
+              rect(270,470,width/8,height/12);
+              rect(330,470,width/8,height/12);
+              rect(270,530,width/8,height/12);
+              rect(330,530,width/8,height/12);
+            }
         }
     }
-    
-    
+
+
     class EndScreen extends SpaceMan
     {
         int Ex = (width / 2 + 80);
         int Ey = 75;
         int hScore;
         int tempScore = 0;
-        
+
         // box variables;
         float posX = 66.6f;
         float posY = 120; // 600 / 5
         float posWidth = 133.3f * 2;
         float posHeight = 250;
-        
+
         float imageY = 600 / 1.55f;
         float imageX1 = 80;
         float imageX2 = (400 / 2) - 25;
         int picSize = 50;
-        
+
         float scoreX = 400 / 2.666666f;
         float scoreY = 600 / 3.52f;
-        
+
         public void display() {
             controls = false;
             textSize(40);
             fill(255);
             text("GAME OVER!", Ex, Ey);
-            
+
             // display box for player results and best score
             fill(255);
             stroke(0xffA0A0A0);
             strokeWeight(20);
             rect(posX, posY, posWidth, posHeight, 5);
             strokeWeight(1);
-            
+
             textSize(30);
             fill(0);
-            
+
             // player score during the game
             text("SCORE", scoreX, scoreY);
             text(PScore, scoreX + 35, scoreY + 50);
-            
+
             // best score read in from file
             text("BEST SCORE", scoreX - 35, scoreY + 120);
-            
+
             for(int i = 0; i < data.length; i ++) {
                 hScore = data[i];
             }
@@ -344,58 +443,59 @@ public class Main extends PApplet {
                 textSize(30);
                 text(tempScore, scoreX + 35, scoreY + 120 + 50);
             }
-            
+
             if(tempScore < hScore) {
                 textSize(30);
                 text(hScore, scoreX + 35, scoreY + 120 + 50);
             }
-            
-            
-            
-            
+
+
+
+
             // display the play button to user.
             image(img2, imageX2, imageY);
-            
+
             if(mousePressed) {
-                
+
                 // play again button if clicked.
                 if( (mouseX >= imageX2) && (mouseX <= imageX2 + picSize) && (mouseY >= imageY) && (mouseY <= imageY + picSize) ) {
+                    bGround.backgroundNumber = (int)random(0,4);
                     endScreen = false;
                     startScreen = true;
                     controls = true;
                     PScore = 0;
                 }
             }
-            
+
         }
     }
-    
-    
-    
-    
+
+
+
+
     class leaderBoard {
-        
+
         float lx = 66.6f;
         int ly = 100;
         int boxLy = 150;
         float boxWL = 133.3f * 2;
-        
+
         int hScore;
         int tSize = 60;
-        
+
         int imageWL = 50;
-        
-        
+
+
         leaderBoard()  {
         }
-        
+
         public void display() {
             bGround.display1();
-            
+
             for(int i = 0; i < plat.size(); i ++) {
                 // draws background
                 bGround.display1();
-                
+
                 // draws stars if the background number is less than or equal to 1,
                 // as they are the space backgrounds
                 if(bGround.backgroundNumber <= 1) {
@@ -403,36 +503,36 @@ public class Main extends PApplet {
                         stars.get(j).drawStars();
                     }
                 }
-                
+
                 // calls spaceman function to draw and update the display of the character
                 spaceMan.update();
                 spaceMan.display();
-                
+
                 // Displays the platform
                 plat.get(i).display();
-                
+
                 if(bPlatform == true) {
                     plat.get(i).beginingPlatform();
                 }
             }
-            
+
             //     fill(255);
             //     text("Leaderboard", lx + 5,ly);
-            
+
             fill(255);
             stroke(0xffA0A0A0);
             strokeWeight(20);
             rect(lx, boxLy, boxWL, boxWL);
             strokeWeight(1);
-            
+
             textSize(30);
             fill(0);
             text("Best Score:", lx * 2 - 10, ly * 2.25f);
-            
+
             textSize(tSize);
             fill(0xffFF1A1A);
-            
-            
+
+
             for(int i = 0; i < data.length; i ++) {
                 for(int j = 0; j < data.length; j ++) {
                     if(data[i] >= data[j]) {
@@ -440,24 +540,24 @@ public class Main extends PApplet {
                     }
                 }
             }
-            
+
             if(hScore > PScore) {
                 if(hScore >= 10) {
                     text(hScore, (width / 2.58f), ly * 3.25f);
                 }
-                
+
                 if(hScore < 10) {
                     text(hScore, (width / 2.28f), ly * 3.25f);
                 }
                 //leaderboard image
                 image(leaderBoardImage, (width / 2) - 150, ly - 50);
-                
-                
+
+
                 // home button image
                 image(homeButtonImage, (width / 2) - 25, ly * 4.5f);
             }
         }
-        
+
         public void update() {
             if(mousePressed) {
                 if( (mouseX >= (width / 2) - 25) && (mouseX <= (width / 2) - 25 + imageWL) && (mouseY >= ly * 4.5f) && (mouseY <= (ly * 4.5f) + imageWL) ) {
@@ -469,37 +569,37 @@ public class Main extends PApplet {
             }
         }
     }
-    
+
     class Platform extends SpaceMan {
         int PlatformX;
         int PlatformY;
         int PlatformWidth;
-        
+
         int PlatformWidth1;
         int PlatformX1;
         int PlatformY1 = height - 100;
         int beginPlatformWidth;
         int bPlatformWidth;
-        
+
         // begining Platform
         int beginPlatform = 20;
         int pSpeed = 0;
-        
+
         Platform(int PlatformX, int PlatformY, int PlatformWidth) {
             this.PlatformX = PlatformX;
             this.PlatformY = PlatformY;
             this.PlatformWidth = PlatformWidth;
         }
-        
+
         Platform(int bPlatformWidth) {
             this.bPlatformWidth = bPlatformWidth;
-        } 
-        
-        
+        }
+
+
         public void display() {
             fill(255);
             stroke(255);
-            
+
             if(startPlatformX == true) {
                 PlatformWidth = 30;
                 PlatformY = height - 100;
@@ -509,74 +609,74 @@ public class Main extends PApplet {
             pSpeed -= 4;
             if(PlatformY + pSpeed <= height - 100) {
                 pSpeed = 0;
-                PlatformY = height - 100; 
+                PlatformY = height - 100;
             }
-            
-        } 
-        
+
+        }
+
         public void beginingPlatform() {
-            
+
             for(int i = 0; i < newPlat.size(); i ++) {
                 if(i == 0) {
                     beginPlatformWidth = newPlat.get(i).bPlatformWidth;
                 }
-                
-                
+
+
                 if( i > 1) {
                     beginPlatformWidth = newPlat.get(i - 1).bPlatformWidth;
                 }
-                
+
             }
-            
+
             fill(255);
             stroke(255);
             rect(beginPlatform, PlatformY1, beginPlatformWidth, height - 150, 5);
         }
-        
+
         public void PlayerHitDetection() {
             for(int i = 0; i < plat.size(); i ++) {
                 if((spaceMan.pos.x+50 >= plat.get(i).PlatformX) && (spaceMan.pos.x+20 < plat.get(i).PlatformX + plat.get(i).PlatformWidth)
                    && (spaceMan.pos.y+100 >= plat.get(i).PlatformY))
-                { 
-                    
+                {
+
                     if(spaceMan.pos.x + 50 <= plat.get(i).PlatformX + (PlatformWidth)) {
                         //if(spaceMan.pos.x>= plat.get(i).PlatformX ){
                         spaceMan.pos.x ++;
-                        
+
                         if(playerScore == true) {
                             PScore++;
                             playerScore = false;
                         }
                         playerOn = true;
                         controls = false;
-                        onPlatform = false; 
-                    } 
-                    
+                        onPlatform = false;
+                    }
+
                     else if(spaceMan.pos.x + 20 <= plat.get(i).PlatformX + (PlatformWidth)) { //left side of platform
                         //if(spaceMan.pos.x>= plat.get(i).PlatformX ){
                         spaceMan.pos.x -= 2;
-                        
+
                         if(playerScore == true) {
                             PScore++;
                             playerScore = false;
                         }
                         playerOn = true;
                         controls = false;
-                        onPlatform = false; 
-                    }              
+                        onPlatform = false;
+                    }
                 }
-                
+
                 if(playerOn == true) {
                     beginPlatform -= 4;
                     plat.get(i).PlatformX -= 4;
                     spaceMan.pos.x -= 4;
-                    
+
                     if(plat.get(i).PlatformX <= 20) {
                         createPlatform();
                         startWidth = false;
                         beginPlatform = 20;
                         PlatformY = height - 100;
-                        controls = true; 
+                        controls = true;
                         playerScore = true;
                         checkPos = true;
                         playerOn = false;
@@ -590,25 +690,25 @@ public class Main extends PApplet {
                         end.display();
                     }
                 }
-                
+
                 if( (spaceMan.pos.x + 20 > plat.get(i).PlatformX + plat.get(i).PlatformWidth) && (spaceMan.pos.x + 20 > beginPlatform + beginPlatformWidth)
                    && (spaceMan.pos.y + 100 >= plat.get(i).PlatformY)) {
                     if(playerOn == false && spaceMan.pos.y + 100 >= plat.get(i).PlatformY) {
-                        endScreen = true; 
+                        endScreen = true;
                         end.display();
                     }
                 }
             }// end of for loop
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
 }
