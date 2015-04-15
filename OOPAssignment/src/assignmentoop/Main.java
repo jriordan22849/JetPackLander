@@ -176,7 +176,7 @@ public class Main extends PApplet {
         
         for(int i = 0; i < num_platform; i ++) {
             
-            int PlatformWidth = (int)random(30, 220);
+            int PlatformWidth = (int)random(30, 90);
             
             if(startWidth == true) {
                 bPlatformWidth = 30;
@@ -383,92 +383,84 @@ public class Main extends PApplet {
     }
     
     
-    class EndScreen extends SpaceMan
+    public class EndScreen extends SpaceMan
     {
-        int Ex = (width / 2 + 80);
-        int Ey = 75;
-        int hScore;
-        int tempScore = 0;
-        
-        // box variables;
-        float posX = 66.6f;
-        float posY = 120; // 600 / 5
-        float posWidth = 133.3f * 2;
-        float posHeight = 250;
-        
-        float imageY = 600 / 1.55f;
-        float imageX1 = 80;
-        float imageX2 = (400 / 2) - 25;
-        int picSize = 50;
-        
-        float scoreX = 400 / 2.666666f;
-        float scoreY = 600 / 3.52f;
-        
-        public void display() {
-            controls = false;
-            textSize(40);
-            fill(255);
-            text("GAME OVER!", Ex, Ey);
-            
-            // display box for player results and best score
-            fill(255);
-            stroke(0xffA0A0A0);
-            strokeWeight(20);
-            rect(posX, posY, posWidth, posHeight, 5);
-            strokeWeight(1);
-            
-            textSize(30);
-            fill(0);
-            
-            // player score during the game
-            text("SCORE", scoreX, scoreY);
-            text(PScore, scoreX + 35, scoreY + 50);
-            
-            // best score read in from file
-            text("BEST SCORE", scoreX - 35, scoreY + 120);
-            
-            for(int i = 0; i < data.length; i ++) {
-                hScore = data[i];
-            }
-            if(PScore >= 10 || hScore >= 10) {
-                textSize(30);
-            }
-            if(PScore >= hScore) {
-                String stringPScore = str(PScore);
-                String[] list = split(stringPScore, ' ');
-                saveStrings("data.txt", list);
-                text(PScore, scoreX + 35, scoreY + 120 + 50);
-                tempScore = PScore;
-            }
-            if(tempScore >= hScore) {
-                textSize(30);
-                text(tempScore, scoreX + 35, scoreY + 120 + 50);
-            }
-            
-            if(tempScore < hScore) {
-                textSize(30);
-                text(hScore, scoreX + 35, scoreY + 120 + 50);
-            }
-            
-            
-            
-            
-            // display the play button to user.
-            image(img2, imageX2, imageY);
-            
-            if(mousePressed) {
-                
-                // play again button if clicked.
-                if( (mouseX >= imageX2) && (mouseX <= imageX2 + picSize) && (mouseY >= imageY) && (mouseY <= imageY + picSize) ) {
-                    endScreen = false;
-                    startScreen = true;
-                    controls = true;
-                    PScore = 0;
-                }
-            }
-            
-        }
-    }
+    	   int Ex = (width / 2 + 80);
+    	   int Ey = 75;
+    	   int hScore;
+    	   
+    	   // box variables; 
+    	   float posX = 66.6f;
+    	   float posY = 120; // 600 / 5
+    	   float posWidth = 133.3f * 2;
+    	   float posHeight = 250;
+    	   
+    	   float imageY = 600 / 1.55f;
+    	   float imageX1 = 80;
+    	   float imageX2 = (400 / 2) - 25;
+    	   int picSize = 50;
+    	   
+    	   float scoreX = 400 / 2.666666f;
+    	   float scoreY = 600 / 3.52f;
+    	   
+    	   public void display() {
+    	     controls = false;
+    	     textSize(40);
+    	     fill(255);
+    	     text("GAME OVER!", Ex, Ey);
+    	     
+    	     // display box for player results and best score
+    	     fill(255);
+    	     stroke(0xffA0A0A0);
+    	     strokeWeight(20);
+    	     rect(posX, posY, posWidth, posHeight, 5);
+    	     strokeWeight(1);
+    	     
+    	     textSize(30);
+    	     fill(0);
+    	     
+    	     // player score during the game
+    	     text("SCORE", scoreX, scoreY);
+    	     text(Main.PScore, scoreX + 35, scoreY + 50);
+    	     
+    	     // best score read in from file
+    	     text("BEST SCORE", scoreX - 35, scoreY + 120);
+    	     
+    	     for(int i = 0; i < data.length; i ++) {
+    	    	 hScore = data[i];
+    	     }
+    	     if(PScore >= 10 || hScore >= 10) {
+    	         textSize(30);
+    	     }
+    	     if(PScore >= hScore) {
+    	       String stringPScore = str(Main.PScore);
+    	       String[] list = split(stringPScore, ' ');
+    	       saveStrings("data.txt", list);
+    	       text(Main.PScore, scoreX + 35, scoreY + 120 + 50);
+    	     }
+    	     else if(hScore > Main.PScore) {
+    	       textSize(30);
+    	       text(hScore, scoreX + 35, scoreY + 120 + 50);
+    	     }
+    	     
+    	     
+    	     // display the play button to user.
+    	     image(Main.img2, imageX2, imageY);
+    	     
+    	     if(mousePressed) {
+    	        
+    	        // play again button if clicked.
+    	        if( (mouseX >= imageX2) && (mouseX <= imageX2 + picSize) && (mouseY >= imageY) && (mouseY <= imageY + picSize) ) {
+    	           bGround.backgroundNumber = (int)random(0,4);
+    	           endScreen = false;
+    	           startScreen = true;
+    	           controls = true;
+    	           PScore = 0;
+    	        }
+    	     }
+    	     
+    	   } 
+    	}
     
     
     
